@@ -52,9 +52,9 @@ class EditMemo : DialogFragment() {
                 db = it
             }
         }
-
-        etEditMemo.setText(memo.isiMemo)
         etEditDate.setText(memo.isDate)
+        etEditMemo.setText(memo.isiMemo)
+
 
         tvCancel.setOnClickListener {
             dismiss()

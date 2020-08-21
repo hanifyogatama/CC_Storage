@@ -11,7 +11,6 @@ class PlayerVsPlayer : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        super.onCreate(savedInstanceState)
         try {
             this.supportActionBar?.hide()
         } catch (e: NullPointerException) {}
@@ -23,7 +22,7 @@ class PlayerVsPlayer : AppCompatActivity() {
         var pilihan=""
         var pilihanCom=""
 
-       //binding.tvComputer.setText("Pemain 2")
+       binding.tvComp.setText("Pemain 2")
 
         binding.rockPemain.setOnClickListener{
             pilihan = "batu"

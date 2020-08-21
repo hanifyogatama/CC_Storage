@@ -57,8 +57,9 @@ class AddMemo : DialogFragment()  {
         tvTambah.setOnClickListener{
             val memo = Memo(
                 null,
-                etMemo.text.toString(),
-                etDate.text.toString()
+                etDate.text.toString(),
+                etMemo.text.toString()
+
             )
 
 

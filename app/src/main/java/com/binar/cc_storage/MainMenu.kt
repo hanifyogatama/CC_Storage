@@ -11,6 +11,10 @@ class MainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
+        try {
+            this.supportActionBar?.hide()
+        } catch (e: NullPointerException) {}
+
         ivPerson.setOnClickListener {
             val toProfileActivity = Intent(this, ProfileActivity::class.java)
             startActivity(toProfileActivity)
@@ -19,6 +23,16 @@ class MainMenu : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
         val username = sharedPreferences.getString("USERNAME", "")
         tvNama.text=username
+        tvNamaPlayer.text=username
 
+        ivLogo.setOnClickListener {
+            val intent = Intent(this,PlayerVsComp::class.java)
+            startActivity(intent)
+        }
+
+        ivPlayerLogo.setOnClickListener {
+            val intent = Intent(this,PlayerVsPlayer::class.java)
+            startActivity(intent)
+        }
     }
 }

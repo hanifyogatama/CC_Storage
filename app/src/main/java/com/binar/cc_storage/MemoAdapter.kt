@@ -23,10 +23,8 @@ class MemoAdapter(private val listMemo: List<Memo>) :
             val tvDate = itemView.tvDate
             val tvMemo = itemView.tvMemo
 
-
-            tvMemo.setText(listMemo.isiMemo)
             tvDate.setText(listMemo.isDate)
-
+            tvMemo.setText(listMemo.isiMemo)
             itemView.setOnClickListener {
 
                 activity?.showEditDialog(listMemo)

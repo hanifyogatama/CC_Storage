@@ -37,9 +37,9 @@
             android:id="@+id/tvDate"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@color/colorBlack"
             android:backgroundTint="@color/SecondColor"
             android:text="this date"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView

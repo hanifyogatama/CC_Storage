@@ -46,7 +46,6 @@ class LoginPage : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             } else {
-
                 Snackbar.make(it, "username / password salah", Snackbar.LENGTH_LONG).show()
             }
         }
