@@ -35,11 +35,11 @@ class MemoAdapter(private val listMemo: List<Memo>) :
             db= it
         }
 
-        holder.itemView.cvCardView.setOnClickListener {
-            val editActivityIntent = Intent(it.context, ProfileActivity::class.java)
-            editActivityIntent.putExtra("memo", listMemo[position])
-            it.context.startActivity(editActivityIntent)
-        }
+//        holder.itemView.cvCardView.setOnClickListener {
+//            val editActivityIntent = Intent(it.context, ProfileActivity::class.java)
+//            editActivityIntent.putExtra("memo", listMemo[position])
+//            it.context.startActivity(editActivityIntent)
+//        }
 
     }
 }
