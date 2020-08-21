@@ -14,7 +14,26 @@ class MemoAdapter(private val listMemo: List<Memo>) :
 
     private lateinit var db: MemoDatabase
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {}
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        val activity = itemView.context as ProfileActivity
+        fun bind(listMemo: List<Memo>) {
+            val listMemo = listMemo[adapterPosition]
+
+            val tvDate = itemView.tvDate
+            val tvMemo = itemView.tvMemo
+
+
+            tvMemo.setText(listMemo.isiMemo)
+            tvDate.setText(listMemo.isDate)
+
+            itemView.setOnClickListener {
+
+                activity?.showEditDialog(listMemo)
+            }
+        }
+
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoAdapter.ViewHolder {
@@ -28,18 +47,7 @@ class MemoAdapter(private val listMemo: List<Memo>) :
     }
 
     override fun onBindViewHolder(holder: MemoAdapter.ViewHolder, position: Int) {
-        holder.itemView.tvDate.text = listMemo[position].isDate
-        holder.itemView.tvMemo.text = listMemo[position].isiMemo
-
-        MemoDatabase.getInstance(holder.itemView.context)?.let{
-            db= it
-        }
-
-//        holder.itemView.cvCardView.setOnClickListener {
-//            val editActivityIntent = Intent(it.context, ProfileActivity::class.java)
-//            editActivityIntent.putExtra("memo", listMemo[position])
-//            it.context.startActivity(editActivityIntent)
-//        }
+        holder.bind(listMemo)
 
     }
 }

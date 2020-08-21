@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_login_page.*
 
 class LoginPage : AppCompatActivity() {
@@ -46,7 +47,7 @@ class LoginPage : AppCompatActivity() {
                 finish()
             } else {
 
-                Toast.makeText(this, "Username / Password Salah", Toast.LENGTH_LONG).show()
+                Snackbar.make(it, "username / password salah", Snackbar.LENGTH_LONG).show()
             }
         }
 

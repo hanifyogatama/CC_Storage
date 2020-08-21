@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddMemo">
+
+    <TextView
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Tambah Memo Kamu"
+        android:textColor="@color/colorBlack"
+        />
+
+
+    <TextView
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="Tanggal"
+        android:textColor="@color/SecondColor"
+        />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:backgroundTint="@color/SecondColor"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="Isi Memo"
+        android:textColor="@color/SecondColor"
+        />
+
+    <EditText
+        android:id="@+id/etMemo"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:focusable="true"
+        android:backgroundTint="@color/SecondColor"
+        android:textSize="20sp" />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvCancel"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="Cancel"
+        android:textColor="@color/SecondColor"
+        />
+
+    <TextView
+        android:id="@+id/tvTambah"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="Tambah"
+        android:textColor="@color/SecondColor"
+        />
+</LinearLayout>
+
+</LinearLayout>

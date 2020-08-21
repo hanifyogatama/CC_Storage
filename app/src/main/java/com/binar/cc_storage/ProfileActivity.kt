@@ -54,53 +54,9 @@ class ProfileActivity : AppCompatActivity() {
         // add memo
         fabAddMemo.setOnClickListener {
             Log.d("Main", "button pressed")
-            val builder = AlertDialog.Builder(this)
-            val inflater = layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.input_layout, null)
-            val etDate = dialogLayout.findViewById<EditText>(R.id.etDate)
-            val etMemo = dialogLayout.findViewById<EditText>(R.id.etMemo)
 
-            with(builder) {
-                setTitle("Tambah Memo Kamu")
-                setPositiveButton("tambah") { dialog, which ->
-
-                    val objectMemo = Memo(
-                        null,
-                        etDate.text.toString(),
-                        etMemo.text.toString()
-                    )
-
-                    GlobalScope.launch {
-                        val result = db.memoDao().addItem(objectMemo)
-                        runOnUiThread {
-                            if (result > 0) {
-                                // success
-                                Toast.makeText(
-                                    applicationContext,
-                                    "Sukses menambahkan data ${objectMemo.isiMemo}",
-                                    Toast.LENGTH_LONG
-                                ).show()
-                            } else {
-                                Toast.makeText(
-                                    applicationContext,
-                                    "gagal menambahkan data ${objectMemo.isiMemo}",
-                                    Toast.LENGTH_LONG
-                                ).show()
-                            }
-                            finish()
-                        }
-
-                    }
-
-                    // Toast.makeText(applicationContext, "text succesfully added", Toast.LENGTH_SHORT).show()
-                }
-                setNegativeButton("cancel") { dialog, which ->
-                    Log.d("Main", "negative button pressed")
-                }
-                setView(dialogLayout)
-                show()
-
-            }
+            val fm  = supportFragmentManager
+            AddMemo().show(fm, "AddMemo Fragment")
         }
 
     }
@@ -130,8 +86,18 @@ class ProfileActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         MemoDatabase.destroyInstance()
+    }
+
+    fun showEditDialog(memo: Memo){
+        val fm  = supportFragmentManager
+        EditMemo.dataMemo(memo).show(fm, "Edit Memo Fragment")
     }
 }
